@@ -96,10 +96,17 @@ public abstract class Creature {
         this.dir = city.getNextDir();
     }
 
-    //BEGIN TODO: any additional methods you may need
-    //step()
-    //takeAction();
-    //END TODO
+    protected void specificTurn(int num) {
+        this.dir = num;
+    }
+    
+    public void step() {
+            point.x = (point.x + (dirX[dir] * stepLen) + City.WIDTH) % City.WIDTH;
+            point.y = (point.y + (dirY[dir] * stepLen) + City.HEIGHT) % City.HEIGHT;
+    }
+
+    public abstract void takeAction();
+    
 
 
     //output a creature to the plotter

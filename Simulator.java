@@ -38,8 +38,13 @@ public class Simulator {
             //TODO...
             //
             // Every N rounds, add a mouse
-            
+            if(count % 100 == 0) {
+                city.addMouse();
+            }
             //Every M rounds, add a Cat
+            if(count % 25 == 0) {
+                city.addCat();
+            }
 
             //END TODO
             city.simulate();
